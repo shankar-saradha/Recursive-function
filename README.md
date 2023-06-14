@@ -1,42 +1,65 @@
 # Recursive-function
 
-## Aim: To write a C# program to reverse a number using recursive function.
+## Aim: 
+To write a C# program to reverse a number using recursive function.
 
 ## Algorithm:
-1. initialise the program 
-2. using static keyword in public key to declare the function 
+### Step 1:
+Create a class called reverse.
+
+### Step 2:
+Create a recursive function named RevNum to reverse the number
+
+### Step 3:
+In the function find reminder of the number and multiply it by 10 and add the reverse number.
+
+### Step 4:
+Recusively call this function to get the reversed number.
+
+### Step 5:
+Create a Main function
+
+### Step 6:
+Get input from the user for the number to be reversed.
+
+### Step 7:
+Call the function RevNum
+
+### Step 8:
+End of the program.
+
+</br>
 
 ## Program:
-~~~ C#
+Developed By: **Shankar SS**
+</br>
+Register No.: **212221240052**
+```c#
 using System;
 
-class Program
+public class reverse
 {
-    static int reverse(int num, int rev)
+    static int RevNum(int n, int rev = 0)
     {
-        if (num == 0)
+        if (n == 0)
         {
             return rev;
         }
-        else
-        {
-            rev = rev * 10 + num % 10;
-            return reverse(num / 10, rev);
-        }
+        int digit = n % 10;
+        rev = rev * 10 + digit;
+        return RevNum(n / 10, rev);
     }
+
     static void Main(string[] args)
     {
-        int num, rev = 0;
-        Console.Write("Enter a number: ");
-        num = int.Parse(Console.ReadLine());
-
-        rev = reverse(num, rev);
-        Console.WriteLine("Reverse of {0} is {1}", num, rev);
+        Console.Write("Enter a number to reverse: ");
+        int number = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("Reversed number: {0}", RevNum(number));
     }
 }
-~~~
-
+```
 ## Output:
-![Screenshot 2023-05-13 091408](https://github.com/shankar-saradha/Recursive-function/assets/93978702/df671405-4c44-4958-bc7b-c5641ec29ed5)
+![image](https://github.com/ShafeeqAhamedS/C-_Exp_7_Recursive-function/assets/93427237/37fd1669-3ccb-4e8c-93f6-507eef44d1f5)
 
 ## Result:
+Thus C# program to reverse a number using recursive function is written and executed sucessfully.
